@@ -1,11 +1,14 @@
-{% extends 'base.html' %} {% load crispy_forms_tags %} {% block content %}
-<div class="col-lg-10 col-md-8 col-sm-12 mx-auto">
-  <h2>Are you sure you want to delete "{{ task.title }}"?</h2>
-  <form method="post">
-    {% csrf_token %} {{ form|crispy }}
-    <button type="submit" class="btn">Yes, Delete</button>
-  </form>
-  <div class="down">
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+{% block content %}
+<div class="container mt-5">
+  <div class="col-lg-8 col-md-10 col-sm-12 mx-auto text-center">
+    <h2 class="mb-4">Are you sure you want to delete "{{ task.title }}"?</h2>
+    <form method="post" class="mb-3">
+      {% csrf_token %}
+      {{ form|crispy }}
+      <button type="submit" class="btn btn-danger">Yes, Delete</button>
+    </form>
     <a href="{% url 'task_list' %}" class="btn btn-secondary">Cancel</a>
   </div>
 </div>

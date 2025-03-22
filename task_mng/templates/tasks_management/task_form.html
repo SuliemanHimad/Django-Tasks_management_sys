@@ -1,8 +1,15 @@
-{% extends 'base.html' %} {% block content %}
-<h2>{{ action }}</h2>
-<form method="post">
-  {% csrf_token %} {{ form.as_p }}
-  <button type="submit">Save</button>
-</form>
-<a href="{% url 'task_list' %}">🔙 Back to Tasks</a>
+{% extends 'base.html' %}
+
+{% load crispy_forms_tags %}
+
+{% block content %}
+<div class="container mt-4">
+  <h2 class="mb-4">{{ action }}</h2>
+  <form method="post" class="needs-validation">
+    {% csrf_token %}
+    {{ form|crispy }}
+    <button type="submit" class="btn btn-primary mt-3">Save</button>
+  </form>
+  <a href="{% url 'task_list' %}" class="btn btn-secondary mt-3">🔙 Back to Tasks</a>
+</div>
 {% endblock %}
