@@ -45,17 +45,3 @@ nav a {
   font-size: 24px;
   font-family: "Indie Flower", cursive;
 }
-
-.btn {
-  padding: 10px 20px;
-  border: none;
-  border-radius: 13px;
-  cursor: pointer;
-  background-color: green;
-}
-.down {
-  margin-top: 20px;
-}
-.btn-secondary {
-  background-color: red;
-}
