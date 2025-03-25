@@ -14,6 +14,9 @@ def signup_view(request):
             return redirect("task_list")  # Redirect to task list
     else:
         form = UserCreationForm()
+        form.fields['username'].help_text = None  # Remove help text for username
+        form.fields['password1'].help_text = None  # Remove help text for password1
+        form.fields['password2'].help_text = None  # Remove help text for password2
     return render(request, "accounts/signup.html", {"form": form})
 
 # Login View
